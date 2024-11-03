@@ -10,11 +10,11 @@ import Auth_layout from "../layout/Auth_layout";
 import LoginPage from "../pages/Auth/LoginPage";
 import RegisterPage from "../pages/Auth/RegisterPage";
 import AdminDashboard_layout from "../layout/AdminDashboard_layout";
-import AdminHome from "../pages/AdminDashboard/AdminHome";
 import Expenses from "../pages/AdminDashboard/Expenses";
 import TotalOrders from "../pages/AdminDashboard/TotalOrders";
 import UploadProduct from "../pages/AdminDashboard/UploadProduct";
 import Products from "../pages/AdminDashboard/Products";
+import SoldProducts from "../pages/AdminDashboard/SoldProducts";
 
 const Router = () => {
   const router = createBrowserRouter([
@@ -52,15 +52,15 @@ const Router = () => {
       children: [
         {
           index: true,
-          element: <AdminHome />,
-        },
-        {
-          path: "expenses",
           element: <Expenses />,
         },
         {
           path: "totalOrders",
           element: <TotalOrders />,
+        },
+        {
+          path: "sales",
+          element: <SoldProducts />,
         },
         {
           path: "totalProducts",

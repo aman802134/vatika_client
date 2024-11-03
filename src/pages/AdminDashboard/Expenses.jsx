@@ -1,5 +1,9 @@
 const Expenses = () => {
-  return <div>this is expenses</div>;
+  return (
+    <>
+      <div className="w-full h-80 shadow2 rounded-md">this is expense</div>
+    </>
+  );
 };
 
 export default Expenses;

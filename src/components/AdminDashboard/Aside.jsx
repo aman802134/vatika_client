@@ -33,7 +33,7 @@ const Aside = () => {
             <li className="w-full flex items-center space-x-2 rounded-md shadow2 py-2 px-2">
               <p className="text-xl">₹</p>
               <Link
-                to="/expenses"
+                to="expenses"
                 className="font-Roboto_serif font-normal text-base tracking-wide text-DarkGreen"
               >
                 Expenses
@@ -42,7 +42,7 @@ const Aside = () => {
             <li className="w-full flex items-center space-x-2 rounded-md shadow2 py-2 px-2">
               <MdOutlineProductionQuantityLimits className="text-xl" />
               <Link
-                to="/totalProducts"
+                to="/dashboard/admin/totalProducts"
                 className="font-Roboto_serif font-normal text-base tracking-wide text-DarkGreen"
               >
                 Total Products
@@ -51,7 +51,7 @@ const Aside = () => {
             <li className="w-full flex items-center space-x-2 rounded-md shadow2 py-2 px-2">
               <MdOutlineProductionQuantityLimits className="text-xl" />
               <Link
-                to="/sales"
+                to="/dashboard/admin/sales"
                 className="font-Roboto_serif font-normal text-base tracking-wide text-DarkGreen"
               >
                 Total Sales
@@ -60,7 +60,7 @@ const Aside = () => {
             <li className="w-full flex items-center space-x-2 rounded-md shadow2 py-2 px-2">
               <TbTruckDelivery className="text-xl" />
               <Link
-                to="/totalOrders"
+                to="/dashboard/admin/totalOrders"
                 className="font-Roboto_serif font-normal text-base tracking-wide text-DarkGreen"
               >
                 Total Orders
@@ -69,7 +69,7 @@ const Aside = () => {
             <li className="w-full flex items-center space-x-2 rounded-md shadow2 py-2 px-2">
               <MdCloudUpload className="text-xl" />
               <Link
-                to="/upload"
+                to="/dashboard/admin/upload"
                 className="font-Roboto_serif font-normal text-base tracking-wide text-DarkGreen"
               >
                 Upload

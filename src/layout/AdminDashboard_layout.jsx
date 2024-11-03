@@ -9,7 +9,7 @@ const AdminDashboard_layout = () => {
         <Aside />
         <div className="w-full h-full py-2 px-1">
           <DashBoardHeader />
-          <main className="w-full h-10">
+          <main className="w-full py-2 px-1">
             <Outlet />
           </main>
         </div>
