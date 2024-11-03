@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&family=Roboto+Slab:wght@100..900&family=Young+Serif&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+     body {
+          scroll-behavior: smooth;
+     }
+}
+
+@layer utilities {
+     .webkitScroller::-webkit-scrollbar {
+          display: none;
+     }
+
+     .shadow {
+          box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+     }
+
+     .shadow2 {
+          box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+     }
+
+     .gradient {
+          background: rgb(230, 216, 180);
+          background: linear-gradient(170deg, rgba(230, 216, 180, 1) 0%, rgba(225, 239, 233, 1) 35%);
+     }
+}
+
+@layer components {
+
+     .newArrival::-webkit-scrollbar {
+          display: none;
+     }
+
+     .filterScroller::-webkit-scrollbar {
+          height: 10px;
+     }
+
+     .filterScroller::-webkit-scrollbar-thumb {
+          background-color: #ccd5ae;
+          border-radius: 20px 20px;
+     }
+}
