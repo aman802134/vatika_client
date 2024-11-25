@@ -10,7 +10,7 @@ import { FiLogOut } from "react-icons/fi";
 const Aside = () => {
   return (
     <>
-      <aside className="w-60 h-[100vh] shadow2 px-3 overflow-x-hidden overflow-y-scroll webkitScroller">
+      <aside className="w-60 h-[100vh] max-h-[100vh] shadow2 px-3 overflow-x-hidden overflow-y-scroll webkitScroller">
         <div className="flex items-center">
           <Link to="/" className="logo flex items-center space-x-2">
             <img src={image} alt="plantSvg" width={30} height={30} />
@@ -24,7 +24,7 @@ const Aside = () => {
             <li className="w-full flex items-center space-x-2 rounded-md shadow2 py-2 px-2">
               <MdDashboard className="text-xl" />
               <Link
-                to="/dashboard"
+                to="/dashboard/admin"
                 className="font-Roboto_serif font-normal text-base tracking-wide text-DarkGreen"
               >
                 Overview

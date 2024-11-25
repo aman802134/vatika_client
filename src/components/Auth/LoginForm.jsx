@@ -45,16 +45,21 @@ const LoginForm = () => {
                 <Link to="/">Login</Link>
               </button>
             </div>
-            <div className="w-full flex justify-center items-center">
-              <span className="text-sm font-Roboto_serif font-normal text-gray-400 py-5">
-                Or sign in using
-              </span>
-            </div>
-            <div className="w-full py-3 px-3">
+            <div className="w-full py-2 px-3">
               <button className=" w-11/12 py-2 px-2 bg-lightWhite rounded-full outline-none border-none font-Roboto_serif font-medium text-lg text-DarkGreen flex items-center space-x-2">
                 <FcGoogle className="text-3xl" />
                 <Link to="/firebase">Sign in with Google</Link>
               </button>
+            </div>
+            <div className="">
+              <div className="w-full">
+                <div className="flex space-x-2">
+                  <span>don&apos;t have account yet ?</span>
+                  <Link to="/auth/register" className="underline">
+                    create new account
+                  </Link>
+                </div>
+              </div>
             </div>
           </form>
         </div>

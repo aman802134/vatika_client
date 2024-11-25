@@ -5,11 +5,11 @@ import DashBoardHeader from "../components/AdminDashboard/DashBoardHeader";
 const AdminDashboard_layout = () => {
   return (
     <>
-      <div className="w-full h-full flex gap-3 gradient">
+      <div className="w-full  flex gap-3">
         <Aside />
-        <div className="w-full h-full py-2 px-1">
+        <div className="w-full h-[100vh] max-h-[100vh] overflow-y-scroll overflow-x-hidden py-2 px-1">
           <DashBoardHeader />
-          <main className="w-full py-2 px-1">
+          <main className="w-full  py-2 px-1">
             <Outlet />
           </main>
         </div>

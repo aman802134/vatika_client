@@ -15,6 +15,7 @@ import TotalOrders from "../pages/AdminDashboard/TotalOrders";
 import UploadProduct from "../pages/AdminDashboard/UploadProduct";
 import Products from "../pages/AdminDashboard/Products";
 import SoldProducts from "../pages/AdminDashboard/SoldProducts";
+import OverView from "../pages/AdminDashboard/OverView";
 
 const Router = () => {
   const router = createBrowserRouter([
@@ -52,6 +53,10 @@ const Router = () => {
       children: [
         {
           index: true,
+          element: <OverView />,
+        },
+        {
+          path: "expenses",
           element: <Expenses />,
         },
         {
@@ -66,11 +71,11 @@ const Router = () => {
           path: "totalProducts",
           element: <Products />,
         },
+        {
+          path: "upload",
+          element: <UploadProduct />,
+        },
       ],
-    },
-    {
-      path: "/dashboard/admin/upload",
-      element: <UploadProduct />,
     },
   ]);
   return (
