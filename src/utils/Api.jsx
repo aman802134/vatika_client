@@ -5,6 +5,17 @@ const api = axios.create({
 });
 
 const ApiService = {
+  register: async (formData) => {
+    try {
+      const response = await api.post("/auth/register", formData);
+      console.log(response.data);
+      return response.data;
+    } catch (error) {
+      console.error(error);
+      throw error;
+    }
+  },
+
   getProduct: async () => {
     const response = await api.get("/products");
     return response.data;
