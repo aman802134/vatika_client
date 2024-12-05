@@ -4,8 +4,11 @@ import leafImage from "/leaf.png";
 import NewProductCard from "../../components/other/NewProductCard";
 import ProductCard from "../../components/other/ProductCard";
 import SingleProduct from "../../components/other/SingleProduct";
+import ApiRequestService from "../../customHooks/useApiRequestHandler";
 
 const HomePage = () => {
+  const products = ApiRequestService.useGetProduct();
+
   return (
     <>
       <main className="w-full overflow-hidden h-[29rem] max-h-[29rem] px-20 py-5 grid grid-cols-1 md:grid-cols-2 bg-BodyColor">
@@ -57,12 +60,13 @@ const HomePage = () => {
         </div>
         <div>
           <div className="w-full pt-10 pb-5 px-10 overflow-y-hidden overflow-x-scroll flex space-x-4 newArrival">
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
+            {products.data?.map((product) => (
+              <ProductCard
+                key={product._id}
+                name={product.name}
+                image={product.image}
+              />
+            ))}
           </div>
         </div>
         <div className="w-full flex justify-center items-center py-3">

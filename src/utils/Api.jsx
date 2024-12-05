@@ -17,7 +17,7 @@ const ApiService = {
   },
 
   getProduct: async () => {
-    const response = await api.get("/products");
+    const response = await api.get("/product");
     return response.data;
   },
 
@@ -26,10 +26,10 @@ const ApiService = {
     return response.data;
   },
 
-  createProduct: async (data) => {
-    const response = await api.post("/create-product", data);
-    return response.data;
-  },
+  // createProduct: async (data) => {
+  //   const response = await api.post("/upload/create-product", data);
+  //   return response.data;
+  // },
 
   updateProduct: async (id, data) => {
     const response = await api.put(`/update-product/${id}`, data);

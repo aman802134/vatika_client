@@ -1,7 +1,9 @@
 import ProductCard from "../../components/other/ProductCard";
 import ProductFilterUtility from "../../components/other/ProductFilterUtility";
+import ApiRequestService from "../../customHooks/useApiRequestHandler";
 
 const ProductPage = () => {
+  const products = ApiRequestService.useGetProduct();
   return (
     <>
       <main className="w-full h-[83vh] max-h-[83vh] bg-BodyColor">
@@ -33,14 +35,13 @@ const ProductPage = () => {
                 </h1>
               </div>
               <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 p-10">
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
+                {products.data?.map((product) => (
+                  <ProductCard
+                    key={product._id}
+                    name={product.name}
+                    image={product.image}
+                  />
+                ))}
               </div>
             </div>
           </div>

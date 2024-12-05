@@ -2,13 +2,14 @@ import { FaStar } from "react-icons/fa";
 import { CiStar } from "react-icons/ci";
 import { CiHeart } from "react-icons/ci";
 import { Link } from "react-router-dom";
-const ProductCard = () => {
+
+const ProductCard = ({ name, image }) => {
   return (
     <>
       <div className="w-[270px] min-w-[270px] h-auto bg-lightWhite rounded-2xl flex flex-col shadow">
         <div className="w-full h-full">
           <img
-            src="/courrouselPlant.png"
+            src={image}
             alt="plant with pot"
             className="w-full h-auto bg-cover bg-center bg-no-repeat rounded-t-2xl"
           />
@@ -28,7 +29,7 @@ const ProductCard = () => {
           </div>
           <div className="w-full">
             <h1 className="font-Roboto_serif font-normal text-base tracking-wider  text-DarkGreen">
-              Lucky jade plant
+              {name}
             </h1>
           </div>
           <div>

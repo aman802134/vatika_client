@@ -1,9 +1,72 @@
 import { MdCloudUpload } from "react-icons/md";
 // import { useState } from "react";
+// import ApiService from "../../customHooks/useApiRequestHandler";
+import { useForm } from "react-hook-form";
+import axios from "axios";
+// const api = axios.create({
+//   baseURL: "http://localhost:4000",
+// });
 
 const UploadProduct = () => {
   // const [file, setFile] = useState();
   // const [input, setInput] = useState();
+  // const [data, setData] = useState();
+  // console.log(data);
+  const {
+    register,
+    handleSubmit,
+    watch,
+    // formState: { errors },
+  } = useForm();
+  // console.log(data);
+  console.log(watch("image"));
+  // const createProduct = async (data) => {
+  //   console.log(data);
+  //   console.log(data.image);
+  //   console.log(data.image.FileList.length);
+  //   // const formData = new FormData();
+  //   // formData.append("name", data.name);
+  //   // formData.append("category", data.category);
+  //   // formData.append("quantity", data.quantity);
+  //   // formData.append("description", data.description);
+  //   // formData.append("price", data.price);
+  //   // formData.append("image", data.image[0]);
+  //   // console.log(formData.name);
+
+  //   // try {
+  //   //   const response = await axios.post(
+  //   //     "http://localhost:4000/upload/create-product",
+  //   //     formData
+  //   //   );
+  //   //   console.log(response.data);
+  //   // } catch (error) {
+  //   //   console.error(error);
+  //   // }
+  // };
+  const onSubmit = async (data) => {
+    console.log(data.image);
+    console.log(data);
+    const formData = new FormData();
+    formData.append("image", data.image[0]);
+    console.log(formData, "image added succesfully");
+    formData.append("name", data.name);
+    formData.append("category", data.category);
+    formData.append("price", data.price);
+    formData.append("description", data.description);
+    formData.append("quantity", data.quantity);
+
+    // Send the formData to the server
+    const response = await axios.post(
+      "http://localhost:4000/upload/create-product",
+      formData
+    );
+    console.log(response.data);
+  };
+
+  // const upload = ApiService.CreateProduct(setData);
+  // console.log(upload);
+
+  // console.log(upload);
   // const handleFile = (e) => {
   //   setFile(e.target.files[0]);
   // };
@@ -12,7 +75,7 @@ const UploadProduct = () => {
   // };
   // const handleOnSubmit = (e) => {
   //   e.preventDefault();
-  //   console.log(file, input);
+  //   // console.log(file, input);
   // };
   return (
     <>
@@ -24,14 +87,20 @@ const UploadProduct = () => {
         </div>
         <div className="w-8/12 py-3 px-3 rounded-md bg-lightWhite shadow2">
           <form
-            action="/upload/create-product"
+            onSubmit={handleSubmit(onSubmit)}
             method="post"
             encType="multipart/form-data"
             className="w-full flex flex-col space-y-5"
           >
             <div className="w-full h-40 flex justify-center items-center py-10 px-10 border-4 rouonded-md border-dotted bg-blue-50 ">
               <label htmlFor=""></label>
-              <input type="file" name="image" id="fileUpload" className="" />
+              <input
+                type="file"
+                name="image"
+                id="fileUpload"
+                {...register("image")}
+                className=""
+              />
               <MdCloudUpload className="text-6xl cursor-pointer" />
             </div>
             <div className="w-full px-5 space-y-1">
@@ -43,8 +112,9 @@ const UploadProduct = () => {
               </label>
               <input
                 type="text"
-                name="productName"
+                name="name"
                 id="productName"
+                {...register("name")}
                 className="w-full py-3 px-2 rounded-md outline-none border-none shadow"
               />
             </div>
@@ -55,9 +125,10 @@ const UploadProduct = () => {
               >
                 Enter product category
               </label>
-              <select
+              {/* <select
                 name="category"
                 id="category"
+                {...register("category")}
                 className="w-full py-3 px-2 rounded-md outline-none border-none shadow"
               >
                 <option
@@ -78,7 +149,14 @@ const UploadProduct = () => {
                 >
                   Show Plants
                 </option>
-              </select>
+              </select> */}
+              <input
+                type="text"
+                name="category"
+                id="category"
+                {...register("category")}
+                className="w-full py-3 px-2 rounded-md outline-none border-none shadow"
+              />
             </div>
             <div className="w-full px-5 space-y-1">
               <label
@@ -91,6 +169,7 @@ const UploadProduct = () => {
                 type="text"
                 name="price"
                 id="price"
+                {...register("price")}
                 className="w-full py-3 px-2 rounded-md outline-none border-none shadow"
               />
             </div>
@@ -105,6 +184,7 @@ const UploadProduct = () => {
                 type="number"
                 name="quantity"
                 id="quantity"
+                {...register("quantity")}
                 className="w-full py-3 px-2 rounded-md outline-none border-none shadow"
               />
             </div>
@@ -119,12 +199,15 @@ const UploadProduct = () => {
                 type="text"
                 name="description"
                 id="description"
+                {...register("description")}
                 className="w-full py-3 px-2 rounded-md outline-none border-none shadow"
               />
             </div>
             <div className="w-full px-5">
               <button
+                // onClick={handleOnSubmit}
                 type="submit"
+                name="upload"
                 className="w-32 py-3 px-2 rounded-md bg-DarkGreen text-white font-Roboto_serif font-medium text-lg tracking-wider"
               >
                 Upload
