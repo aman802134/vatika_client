@@ -2,8 +2,11 @@ import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import api from "../../api/api";
+import { useQueryClient } from "@tanstack/react-query";
 
 const Login = () => {
+  const queryClient = useQueryClient();
+
   const { register, handleSubmit } = useForm();
   const navigate = useNavigate();
   const onSubmit = async (data) => {
@@ -12,6 +15,7 @@ const Login = () => {
       const token = response.data;
       console.log(token);
       if (response.status === 201) {
+        queryClient.invalidateQueries({ queryKey: ["auth"] });
         navigate("/");
       }
     } catch (error) {
