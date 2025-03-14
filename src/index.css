@@ -1,1 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Oxygen:wght@300;400;700&display=swap');
 @import "tailwindcss";
+
+@theme {
+  --font-sans: 'Oxygen', sans-serif;
+  --font-mono: 'DM Mono', monospace;
+  --font-serif: 'Cinzel', serif;
+
+  --color-auth: #C9CEBD;
+  --color-auth-light: #B2BCAA;
+  --color-login-btn: #12664F;
+}
