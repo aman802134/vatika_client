@@ -1,14 +1,12 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
-// import { useMutation } from "@tanstack/react-query";
 import api from "../../api/api";
 
 const Register = () => {
   const { register, handleSubmit } = useForm();
   const navigate = useNavigate();
   const onSubmit = async (data) => {
-    console.log("Form data:", data); // Log the form data
     try {
       const response = await api.post("/auth/register", data);
       if (response.status === 201) {

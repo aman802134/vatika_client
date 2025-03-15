@@ -6,9 +6,9 @@ import { useQueryClient } from "@tanstack/react-query";
 
 const Login = () => {
   const queryClient = useQueryClient();
-
   const { register, handleSubmit } = useForm();
   const navigate = useNavigate();
+
   const onSubmit = async (data) => {
     try {
       const response = await api.post("/auth/login", data);
