@@ -12,31 +12,27 @@ const Header = () => {
   };
   return (
     <>
-      <header className="w-full h-16 grid grid-cols-[10%_80%] md:grid-cols-[50%_20%_30%] lg:grid-cols-3 items-center py-1.5 bg-red-100">
+      <header className="w-full h-16 grid grid-cols-[10%_80%] md:grid-cols-[50%_20%_30%] lg:grid-cols-3 items-center py-1.5">
         <div className="w-10 md:hidden">
-          <div className="px-2.5">
-            <AiOutlineMenu
-              size={30}
-              className="cursor-pointer"
-              onClick={handleClick}
-            />
+          <div className="px-2.5 cursor-pointer">
+            <AiOutlineMenu size={30} className="" onClick={handleClick} />
           </div>
         </div>
         {toggleMenu && <MobileNav toggle={handleClick} />}
         <div className="w-full hidden md:block px-2.5">
           <ul className="flex items-center space-x-4">
-            <li className="py-1 rounded-full px-3 bg-amber-100 hover:bg-amber-200">
-              <Link to="/about" className="font-mono text-lg">
+            <li className="py-1 rounded-full px-3 bg-auth-light">
+              <Link to="/about" className="font-mono text-lg text-white">
                 About
               </Link>
             </li>
-            <li className="py-1 rounded-full px-3 bg-amber-100 hover:bg-amber-200">
-              <Link to="/services" className="font-mono text-lg">
+            <li className="py-1 rounded-full px-3 bg-auth-light">
+              <Link to="/services" className="font-mono text-lg text-white">
                 Services
               </Link>
             </li>
-            <li className="py-1 rounded-full px-3 bg-amber-100 hover:bg-amber-200">
-              <Link to="/products" className="font-mono text-lg">
+            <li className="py-1 rounded-full px-3 bg-auth-light">
+              <Link to="/products" className="font-mono text-lg text-white">
                 Products
               </Link>
             </li>
