@@ -13,7 +13,7 @@ const Courrousell = () => {
           </div>
           <div className="px-5 py-5 md:px-10 md:py-5 lg:px-28 lg:py-14 xl:px-48">
             <div className="w-full flex flex-col">
-              <h1 className="text-4xl md:text-6xl text-white font-serif font-bold md:tracking-wider">
+              <h1 className="text-3xl md:text-6xl text-white font-serif font-bold uppercase">
                 Macadamia
               </h1>
               <h2 className="text-sm md:text-lg text-gray-300 font-mono font-bold tracking-wider">

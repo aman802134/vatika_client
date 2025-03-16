@@ -15,8 +15,8 @@ const Card = () => {
             alt="a green plant with pot"
             className="w-full h-full rounded-2xl object-cover scale-90"
           />
-          <span className="absolute top-2 right-2.5 py-1.5 px-1.5 rounded-xl bg-red-100">
-            <FaRegHeart className="text-red-500 cursor-pointer" />
+          <span className="absolute top-2 right-2.5 py-1.5 px-1.5 rounded-xl bg-red-300 animate-pulse">
+            <FaRegHeart className="text-red-700 cursor-pointer " />
           </span>
         </div>
         <div className="w-full flex flex-col py-2.5 px-3.5">

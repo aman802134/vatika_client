@@ -1,14 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Oxygen:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oxygen:wght@300;400;700&display=swap');
 @import "tailwindcss";
 
 body {
   @apply overflow-x-hidden;
+  /* scroll-behavior: smooth; */
 }
 
 @theme {
   --font-sans: 'Oxygen', sans-serif;
   --font-mono: 'DM Mono', monospace;
-  --font-serif: 'Cinzel', serif;
+  --font-serif: 'Montserrat', sans-serif;
 
   --color-auth: #C9CEBD;
   --color-auth-light: #4c956c;
@@ -22,4 +23,13 @@ body {
   &::-webkit-scrollbar {
     display: none;
   }
+}
+
+@utility glassmorphism {
+  backdrop-filter: blur(0px) saturate(0%);
+  -webkit-backdrop-filter: blur(0px) saturate(0%);
+  background-color: rgba(18, 102, 79, 0.73);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+
 }

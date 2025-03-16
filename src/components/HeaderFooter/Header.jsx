@@ -42,7 +42,7 @@ const Header = () => {
           <img
             src={Logo}
             alt="plant image"
-            className="w-12 h-12 rounded-full"
+            className="w-12 h-12 rounded-full animate-spin"
           />
           <Link to="/" className="font-serif font-bold text-2xl tracking-wide">
             Vatika
