@@ -8,12 +8,12 @@ import { Link } from "react-router-dom";
 const Card = () => {
   return (
     <>
-      <div className="w-72 h-96 flex flex-col rounded-2xl shadow-xl bg-amber-50">
-        <div className="w-full h-60 relative">
+      <div className="w-64 flex flex-col rounded-2xl shadow-xl bg-amber-50">
+        <div className="w-full relative ">
           <img
             src={coverImg}
             alt="a green plant with pot"
-            className="w-full h-full rounded-2xl object-cover scale-90"
+            className="w-full rounded-t-2xl object-cover aspect-[2/2]"
           />
           <span className="absolute top-2 right-2.5 py-1.5 px-1.5 rounded-xl bg-red-300 animate-pulse">
             <FaRegHeart className="text-red-700 cursor-pointer " />
@@ -27,7 +27,7 @@ const Card = () => {
             <MdStar size={20} className="text-yellow-300" />
             <MdStarHalf size={20} className="text-yellow-300" />
           </span>
-          <div className="w-full flex justify-between items-center py-8">
+          <div className="w-full flex justify-between items-center">
             <div className="flex flex-col">
               <span className="text-xs text-gray-800 font-mono font-light">
                 Price:

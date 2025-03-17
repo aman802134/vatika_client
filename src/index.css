@@ -19,6 +19,12 @@ body {
   --color-lime-green: #cef0d3;
 }
 
+@utility shadowInner {
+  background: linear-gradient(225deg, #4c956c, #344e41);
+  box-shadow: -5px 5px 10px #d9d9d9,
+    5px -5px 10px #e7e7e7;
+}
+
 @utility scrollbar-hidden {
   &::-webkit-scrollbar {
     display: none;

@@ -7,12 +7,12 @@ import { Link } from "react-router-dom";
 
 const Card2 = () => {
   return (
-    <div className="w-64 xl:min-w-64 h-[26rem] flex flex-col rounded-2xl shadow-xl bg-amber-50">
-      <div className="w-full h-60 relative">
+    <div className="w-64 xl:min-w-64 flex flex-col rounded-2xl shadow-xl bg-amber-50">
+      <div className="w-full relative">
         <img
           src={coverImg}
           alt="a green plant with pot"
-          className="w-full h-full rounded-2xl object-cover scale-90"
+          className="w-full h-full rounded-t-2xl object-cover aspect-[2/2]"
         />
         <span className="absolute top-2 right-2.5 py-1.5 px-1.5 rounded-xl bg-red-300 animate-pulse">
           <FaRegHeart className="text-red-600 cursor-pointer" />

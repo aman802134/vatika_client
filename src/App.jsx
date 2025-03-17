@@ -10,6 +10,8 @@ import DashboardLayout from "./layouts/DashboardLayout";
 import Home from "./pages/Home/Home";
 import { AuthContextProvider } from "./context/AuthContextProvider";
 import ProtectedRoute from "./context/ProtectedRoute";
+import Products from "./pages/Home/Products";
+import ProductDetail from "./pages/Home/ProductDetail";
 
 const App = () => {
   const querryClient = new QueryClient();
@@ -25,6 +27,14 @@ const App = () => {
         {
           path: "/about",
           element: <h1>About</h1>,
+        },
+        {
+          path: "/products",
+          element: <Products />,
+        },
+        {
+          path: "/product-detail/:id",
+          element: <ProductDetail />,
         },
       ],
     },

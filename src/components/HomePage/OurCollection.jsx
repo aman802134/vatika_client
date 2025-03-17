@@ -22,7 +22,7 @@ const OurCollection = () => {
           Our Collections
         </h1>
         <div>
-          <Button />
+          <Button value={"explore"} />
         </div>
       </div>
       <div className="w-full sm:grid grid-cols-2 lg:grid-cols-3 xl:flex xl:space-x-5 xl:overflow-x-scroll xl:overflow-y-hidden space-y-5 px-5 scrollbar-hidden">
