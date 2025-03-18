@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 const Card = () => {
   return (
     <>
-      <div className="w-64 flex flex-col rounded-2xl shadow-xl bg-amber-50">
+      <div className="w-64 flex flex-col rounded-2xl shadow-md bg-amber-50">
         <div className="w-full relative ">
           <img
             src={coverImg}

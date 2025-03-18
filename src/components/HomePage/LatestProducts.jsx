@@ -23,7 +23,7 @@ const LatestProducts = () => {
       <h1 className="text-3xl md:text-4xl font-sans font-semibold tracking-wide">
         latest products
       </h1>
-      <div className="w-full sm:grid grid-cols-2 lg:grid-cols-3 space-y-5">
+      <div className="w-full sm:grid grid-cols-2 lg:grid-cols-3 space-y-5 px-5">
         <Card />
         <Card />
         <Card />

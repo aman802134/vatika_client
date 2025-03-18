@@ -12,6 +12,7 @@ import { AuthContextProvider } from "./context/AuthContextProvider";
 import ProtectedRoute from "./context/ProtectedRoute";
 import Products from "./pages/Home/Products";
 import ProductDetail from "./pages/Home/ProductDetail";
+import Account from "./pages/Home/Account";
 
 const App = () => {
   const querryClient = new QueryClient();
@@ -25,8 +26,8 @@ const App = () => {
           element: <Home />,
         },
         {
-          path: "/about",
-          element: <h1>About</h1>,
+          path: "/account",
+          element: <Account />,
         },
         {
           path: "/products",
