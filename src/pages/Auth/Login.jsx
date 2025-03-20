@@ -25,7 +25,7 @@ const Login = () => {
   return (
     <>
       <div className="w-full h-[100vh] flex flex-col lg:px-10 lg:py-10">
-        <div className="py-3 px-5">
+        <div className="py-3 px-9">
           <h1 className=" font-mono font-bold text-3xl">Welcome back,</h1>
           <p className="text-sm font-mono font-light">
             Login to your account to continue...
@@ -34,7 +34,7 @@ const Login = () => {
         <div className="w-full h-full px-5 py-4">
           <form
             onSubmit={handleSubmit(onSubmit)}
-            className="w-full flex flex-col bg-auth-light p-5 space-y-8 md:space-y-10 rounded-lg"
+            className="w-full flex flex-col bg-light-green p-5 space-y-8 md:space-y-10 rounded-lg"
           >
             <div>
               <label htmlFor="email"></label>

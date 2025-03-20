@@ -18,12 +18,7 @@ const Header = () => {
   };
   return (
     <>
-      <header
-        className="w-full h-16 flex justify-between items-center py-1.5 aspect-[2/1] bg-cover bg-center rounded-lg overflow-hidden"
-        style={{
-          backgroundImage: `url('/leaf_6.png')`,
-        }}
-      >
+      <header className="w-full h-16 flex justify-between items-center py-1.5 rounded-lg overflow-hidden">
         <div className="flex justify-center items-center space-x-2">
           <div className="px-2.5 cursor-pointer">
             <RiMenu2Line size={30} onClick={handleClick} />

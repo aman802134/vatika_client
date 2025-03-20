@@ -7,7 +7,7 @@ const Cart = ({ value }) => {
   return (
     <>
       <aside className="w-8/9 lg:w-96 fixed right-0 top-0 bg-auth space-y-5 z-50  px-5 py-5 overflow-hidden">
-        <div className="w-full flex justify-between items-center py-3.5 px-5 bg-auth-light">
+        <div className="w-full flex justify-between items-center py-2.5 px-5 bg-auth-light rounded-xl">
           <h1 className="text-lg text-white font-serif font-medium">Cart</h1>
           <RxCross1
             onClick={value}
@@ -23,8 +23,8 @@ const Cart = ({ value }) => {
           <CartList />
           <CartList />
         </div>
-        <div className="w-full shadow bg-white">
-          <button className="py-3 px-4 w-full bg-auth-light">
+        <div className="w-full px-4 py-2">
+          <button className="py-2 px-4 w-full bg-auth-light rounded-sm">
             <Link
               to="/buy"
               className="text-lg text-white font-serif font-medium"

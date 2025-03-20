@@ -17,12 +17,23 @@ body {
   --color-courrousel: #344e41;
   --color-light-green: #f3fbf4;
   --color-lime-green: #cef0d3;
+  --color-gradient-1: #ffefc7;
+  --color-gradient-2: #b1f1d3;
+  --color-dark-greenish-blue: #123D36;
+  --color-light_beige: #F2F1EA;
+  --color-dark-green: #2C4B38;
+  --color-pinkish-cream: #EAD8CB;
+  --color-muted-taupe: #D6C4B8;
 }
 
-@utility shadowInner {
-  background: linear-gradient(225deg, #4c956c, #344e41);
-  box-shadow: -5px 5px 10px #d9d9d9,
-    5px -5px 10px #e7e7e7;
+
+
+@utility boxShadow {
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+
+@utility boxShadowGradient {
+  box-shadow: rgba(177, 241, 211, 100) 0px 0.0625em 0.0625em, rgba(255, 239, 199, 100) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
 }
 
 @utility scrollbar-hidden {
@@ -30,6 +41,7 @@ body {
     display: none;
   }
 }
+
 
 @utility glassmorphism {
   backdrop-filter: blur(0px) saturate(0%);

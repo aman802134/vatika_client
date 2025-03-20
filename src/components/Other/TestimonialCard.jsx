@@ -6,7 +6,7 @@ import { MdStarHalf } from "react-icons/md";
 const TestimonialCard = () => {
   return (
     <>
-      <div className="w-72 min-w-72 h-48 py-2.5 px-2.5 rounded-lg shadow-xl space-y-1.5 glassmorphism animate-pulse">
+      <div className="w-72 min-w-72 h-48 py-2.5 px-2.5 rounded-lg shadow-xl space-y-1.5 glassmorphism">
         <span className="flex items-center space-x-2">
           <div className="w-12 h-12 rounded-full">
             <img

@@ -15,7 +15,6 @@ export const AuthContextProvider = ({ children }) => {
     refetchOnMount: false,
     retry: false,
   });
-  console.log("response from authContext", data);
   return (
     <>
       <AuthContext.Provider value={{ data, isLoading, error }}>

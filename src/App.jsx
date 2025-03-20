@@ -13,6 +13,9 @@ import ProtectedRoute from "./context/ProtectedRoute";
 import Products from "./pages/Home/Products";
 import ProductDetail from "./pages/Home/ProductDetail";
 import Account from "./pages/Home/Account";
+import OverView from "./pages/Dashboard/OverView";
+import ProductStocks from "./pages/Dashboard/ProductStocks";
+import UploadProduct from "./pages/Dashboard/UploadProduct";
 
 const App = () => {
   const querryClient = new QueryClient();
@@ -62,7 +65,15 @@ const App = () => {
           children: [
             {
               index: true,
-              element: <h1>this is dashboard Home</h1>,
+              element: <OverView />,
+            },
+            {
+              path: "stock",
+              element: <ProductStocks />,
+            },
+            {
+              path: "upload",
+              element: <UploadProduct />,
             },
           ],
         },

@@ -41,7 +41,7 @@ const ProductRightAside = () => {
               <span className="text-xs ml-1 text-gray-600">(126)</span>
             </div>
             <div className="font-semibold text-green-700">₹1,299</div>
-            <button className="mt-3 w-full bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded-md transition">
+            <button className="mt-3 w-full bg-login-btn hover:bg-green-700 text-white py-2 px-4 rounded-md transition">
               View Details
             </button>
           </div>
@@ -100,7 +100,7 @@ const ProductRightAside = () => {
               </select>
             </div>
 
-            <button className="w-full bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded-md transition">
+            <button className="w-full bg-login-btn hover:bg-green-700 text-white py-2 px-4 rounded-md transition">
               Find Plants
             </button>
           </div>
