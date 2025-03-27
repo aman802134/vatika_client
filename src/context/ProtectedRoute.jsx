@@ -5,21 +5,30 @@ import { useNavigate, Outlet } from "react-router-dom";
 const ProtectedRoute = ({ adminOnly = false }) => {
   const navigate = useNavigate();
   const { data, isLoading, error } = useAuth();
-  console.log("this is protected route :", data);
-
+  // If error or no user data, redirect to login
   useEffect(() => {
-    // Only perform navigation after the loading is finished
-    if (!isLoading) {
-      if (error || !data) {
-        navigate("/auth/login", { replace: true });
-      } else if (adminOnly && data.role !== "admin") {
-        navigate("/unAuthorized");
-      }
+    if (isLoading) return; // Prevent navigation while loading
+
+    if (error || !data) {
+      navigate("/auth/login", { replace: true });
+      return;
     }
-  }, [data, isLoading, adminOnly, navigate, error]);
-  if (isLoading || data == undefined) {
+
+    if (adminOnly && data.role !== "admin") {
+      navigate("/unAuthorized", { replace: true });
+      return;
+    }
+
+    if (!adminOnly && data.role === "user") {
+      navigate("/account", { replace: true });
+      return;
+    }
+  }, [data, isLoading, error, navigate, adminOnly]);
+
+  if (isLoading) {
     return <div>Loading...</div>;
   }
+
   return <Outlet />;
 };
 

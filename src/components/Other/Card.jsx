@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 const Card = () => {
   return (
     <>
-      <div className="w-64 flex flex-col rounded-2xl shadow-md bg-amber-50">
+      <div className="w-56 flex flex-col rounded-2xl shadow-md bg-amber-50">
         <div className="w-full relative ">
           <img
             src={coverImg}
@@ -27,7 +27,7 @@ const Card = () => {
             <MdStar size={20} className="text-yellow-300" />
             <MdStarHalf size={20} className="text-yellow-300" />
           </span>
-          <div className="w-full flex justify-between items-center">
+          <div className="w-full flex justify-between items-center py-1.5">
             <div className="flex flex-col">
               <span className="text-xs text-gray-800 font-mono font-light">
                 Price:
@@ -39,10 +39,10 @@ const Card = () => {
             <div>
               <button className="px-4 py-2 bg-login-btn rounded-tl-2xl rounded-br-2xl">
                 <Link
-                  to="/add-to-cart"
+                  to="/product-detail/:id"
                   className="text-sm text-white font-mono font-medium"
                 >
-                  Add to cart
+                  view product
                 </Link>
               </button>
             </div>

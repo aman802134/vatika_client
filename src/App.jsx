@@ -16,6 +16,7 @@ import Account from "./pages/Home/Account";
 import OverView from "./pages/Dashboard/OverView";
 import ProductStocks from "./pages/Dashboard/ProductStocks";
 import UploadProduct from "./pages/Dashboard/UploadProduct";
+import Profile from "./components/HeaderFooter/Profile";
 
 const App = () => {
   const querryClient = new QueryClient();
@@ -30,7 +31,30 @@ const App = () => {
         },
         {
           path: "/account",
-          element: <Account />,
+          element: <ProtectedRoute />,
+          children: [
+            {
+              element: <Account />,
+              children: [
+                {
+                  index: true,
+                  element: <Profile />,
+                },
+                {
+                  path: "orders",
+                  element: <Profile />,
+                },
+                {
+                  path: "recent-view",
+                  element: <Profile />,
+                },
+                {
+                  path: "delivery-address",
+                  element: <Profile />,
+                },
+              ],
+            },
+          ],
         },
         {
           path: "/products",
@@ -47,18 +71,18 @@ const App = () => {
       element: <AuthLayout />,
       children: [
         {
-          path: "login",
-          element: <Login />,
-        },
-        {
           path: "register",
           element: <Register />,
+        },
+        {
+          path: "login",
+          element: <Login />,
         },
       ],
     },
     {
       path: "/dashboard/admin",
-      element: <ProtectedRoute />,
+      element: <ProtectedRoute adminOnly={true} />,
       children: [
         {
           element: <DashboardLayout />,
@@ -78,6 +102,10 @@ const App = () => {
           ],
         },
       ],
+    },
+    {
+      path: "/unAuthorized",
+      element: <div>UnAuthorized</div>,
     },
   ]);
   return (

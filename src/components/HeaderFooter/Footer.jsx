@@ -21,7 +21,7 @@ const Footer = () => {
               <img
                 src={Logo}
                 alt="VATIKA Logo"
-                className="h-12 w-12 rounded-full animate-spin"
+                className="h-12 w-12 rounded-full"
               />
               <h2 className="text-2xl font-serif font-bold text-[#cef0d3]">
                 VATIKA

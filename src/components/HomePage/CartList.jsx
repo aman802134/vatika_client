@@ -16,7 +16,9 @@ const CartList = () => {
         <div className="w-full h-full flex flex-col justify-start space-y-3.5 items-center">
           <div className="w-full flex justify-center items-center">
             <h1 className="w-3/1 underline font-serif font-medium text-sm text-gray-800 cursor-pointer">
-              <Link to="/detail">Macadamia Glossy green leaves</Link>
+              <Link to="/product-detail/:id">
+                Macadamia Glossy green leaves
+              </Link>
             </h1>
             <span>
               <RxCross2 className="cursor-pointer" />

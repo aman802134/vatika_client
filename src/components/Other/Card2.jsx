@@ -37,7 +37,7 @@ const Card2 = () => {
         <div className="w-full py-2 flex justify-center items-center">
           <button className="px-4 py-2 w-full border-2 outline-none border-login-btn rounded-full">
             <Link
-              to="/add-to-cart"
+              to="/product-detail/:id"
               className="text-sm text-gray-900 font-mono font-medium"
             >
               view detail

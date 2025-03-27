@@ -13,7 +13,6 @@ const Login = () => {
     try {
       const response = await api.post("/auth/login", data);
       const token = response.data;
-      console.log(token);
       if (response.status === 201) {
         queryClient.invalidateQueries({ queryKey: ["auth"] });
         navigate("/");

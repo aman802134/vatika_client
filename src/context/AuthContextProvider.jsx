@@ -7,7 +7,9 @@ export const AuthContextProvider = ({ children }) => {
   const { data, isLoading, error } = useQuery({
     queryKey: ["auth"],
     queryFn: async () => {
-      const response = await api.get("/auth/me", { withCredentials: true });
+      const response = await api.get("/auth/me", {
+        withCredentials: true,
+      });
       return response.data.user;
     },
     staleTime: 1000 * 60 * 5,
@@ -15,9 +17,17 @@ export const AuthContextProvider = ({ children }) => {
     refetchOnMount: false,
     retry: false,
   });
+  console.log("from authcontextProvider", data);
+
   return (
     <>
-      <AuthContext.Provider value={{ data, isLoading, error }}>
+      <AuthContext.Provider
+        value={{
+          data,
+          isLoading,
+          error,
+        }}
+      >
         {children}
       </AuthContext.Provider>
     </>

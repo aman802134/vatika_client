@@ -1,21 +1,35 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Logo from "/Logo.jpg";
 import { RiMenu2Line } from "react-icons/ri";
 import { FaCartShopping } from "react-icons/fa6";
 import MobileNav from "./MobileNav";
 import Cart from "../../components/HomePage/Cart";
 import { IoPerson } from "react-icons/io5";
+import { useAuth } from "../../customHooks/useAuth";
 
 const Header = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
   const [toggleCart, setToggleCart] = useState(false);
+  const { data, isLoading } = useAuth();
+  const navigate = useNavigate();
+
+  const handleAuth = () => {
+    if (!data) {
+      navigate("/auth/login");
+    } else {
+      navigate("/account");
+    }
+  };
   const handleClick = () => {
     setToggleMenu(!toggleMenu);
   };
   const handleCartToggle = () => {
     setToggleCart(!toggleCart);
   };
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
   return (
     <>
       <header className="w-full h-16 flex justify-between items-center py-1.5 rounded-lg overflow-hidden">
@@ -40,7 +54,7 @@ const Header = () => {
         </div>
         {toggleCart && <Cart value={handleCartToggle} />}
         <div className="flex items-center space-x-5 px-5">
-          <Link to="/account" className="cursor-pointer">
+          <Link onClick={handleAuth} to="/account" className="cursor-pointer">
             <IoPerson size={25} />
           </Link>
           <button className="cursor-pointer" onClick={handleCartToggle}>
