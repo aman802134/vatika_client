@@ -1,4 +1,5 @@
 {
+  "homepage": "https://aman802134.github.io/vatika_client/",
   "name": "vatika_client",
   "private": true,
   "version": "0.0.0",
@@ -7,18 +8,23 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "gh-pages -d dist",
+    "predeploy": "npm run build"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^2.6.1",
     "@tailwindcss/vite": "^4.0.12",
     "@tanstack/react-query": "^5.67.2",
     "@tanstack/react-query-devtools": "^5.67.3",
     "axios": "^1.8.3",
     "framer-motion": "^12.4.10",
+    "gh-pages": "^6.3.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-hook-form": "^7.54.2",
     "react-icons": "^5.5.0",
+    "react-redux": "^9.2.0",
     "react-router-dom": "^7.3.0",
     "react-toastify": "^11.0.5",
     "tailwindcss": "^4.0.12"
