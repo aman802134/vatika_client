@@ -1,28 +1,12 @@
 import React from "react";
-import { Link, Outlet, useNavigate } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import { IoPerson } from "react-icons/io5";
 import { FaLocationDot } from "react-icons/fa6";
 import { GiShoppingBag } from "react-icons/gi";
 import { RiSearchEyeLine } from "react-icons/ri";
 import { RiLogoutCircleLine } from "react-icons/ri";
-import api from "../../api/api";
 
 const Account = () => {
-  const navigate = useNavigate();
-  const handleLogout = async () => {
-    // Implement logout functionality here
-    console.log("Logout clicked");
-    const response = await api.post("/auth/logout", {
-      withCredentials: true,
-    });
-    if (response.status === 200) {
-      navigate("/auth/login");
-      console.log("Logout successful");
-      // Redirect to login page or perform any other action
-    } else {
-      console.log("Logout failed");
-    }
-  };
   return (
     <>
       <main className="w-full h-screen px-10 py-5">
@@ -84,13 +68,12 @@ const Account = () => {
               </ul>
               <div className="w-full flex justify-start items-center space-x-2.5 border-l-4 border-[1px] border-white px-1.5 py-1.5 rounded-sm cursor-pointer">
                 <RiLogoutCircleLine size={20} className="text-white" />
-                <button
-                  onClick={handleLogout}
-                  type="button"
-                  className="text-sm text-white font-serif font-bold cursor-pointer"
+                <Link
+                  to="/logout"
+                  className="text-sm text-white font-serif font-bold"
                 >
                   Logout
-                </button>
+                </Link>
               </div>
             </div>
           </aside>
